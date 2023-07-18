@@ -63,7 +63,7 @@ jobs:
         if: matrix.os == 'macos-latest'
         run: brew install portaudio pkg-config
       - name: Set up arm mac cross compilation
-        if: matrix.build_target == macos-arm64
+        if: matrix.build_target == 'macos-arm64'
         run: |
           echo "SDKROOT=$(xcrun -sdk macosx11.1 --show-sdk-path)" >> $GITHUB_ENV
           echo "MACOSX_DEPLOYMENT_TARGET=$(xcrun -sdk macosx11.1 --show-sdk-platform-version)" >> $GITHUB_ENV
